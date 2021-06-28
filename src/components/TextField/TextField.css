@@ -15,11 +15,6 @@
   font-size: 1rem;
 }
 
-.text-input-no-error {
-  border: solid 0.1rem grey;
-  color: black;
-}
-
 .text-input-error {
   border: solid 0.1rem red;
   color: red;
