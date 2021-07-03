@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/Header/Header'
 import HomePage from './pages/HomePage/HomePage'
 import SignInPage from './pages/SignInPage/SignInPage'
+import { setUserInfo} from './redux/actions'
 class App extends Component {
    
     state = {
@@ -13,12 +15,15 @@ class App extends Component {
 
 
     setCurrentUser = ({username, email, password}) => {
-        console.log(username)
-            this.setState({ currentUser : username, userInfo: {username, email, password}})
+        const { setUserInfo } = this.props
+            // this.setState({ currentUser : username, userInfo: {username, email, password}})
+            // setCurrentUser(username)
+            setUserInfo({username, email, password})
     }  
 
     render(){
-        const { currentUser, userInfo } = this.state;
+        // const { currentUser, userInfo } = this.state;
+        const { currentUser, userInfo } = this.props
         console.log(currentUser);
         return ( 
             <div>
@@ -39,5 +44,20 @@ class App extends Component {
     }
 
 }
+
+
+const mapStateToProps = (state) => ({
+    currentUser: state.currentUser,
+    userInfo: state.userInfo
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    setUserInfo: (values) => dispatch(setUserInfo(values))
+})
+
+// const mapDispathToProps = {
+
+// }
+
  
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
