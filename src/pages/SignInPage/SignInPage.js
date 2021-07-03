@@ -3,16 +3,24 @@ import validateLogin from './validateLogin'
 import TextField from '../../components/TextField/TextField'
 import './SignInPage.css'
 class SignInPage extends Component {
-    state = { 
-        username: '',
-        email: '',
-        password: '',
-        errors: {},
+    constructor(props){
+        super(props)
+        this.ref = React.createRef()
+        this.state = { 
+            username: '',
+            email: '',
+            password: '',
+            errors: {},
+    
+         }
+    }
 
-     }
+
+
 
 
     handleChange = (e) => {
+        
         this.setState({[e.target.name]: e.target.value })
      }
 
@@ -43,8 +51,9 @@ class SignInPage extends Component {
 
     render() { 
         const { username, email, password, errors } = this.state
+        console.log(username)
         return ( 
-            <div className="sign-in-bg">
+            <div className="sign-in-bg" ref={this.ref}>
                 <div className="form-container">
                     <form onSubmit={this.handleSubmit}>
                         <TextField 
