@@ -1,0 +1,72 @@
+.nav-container {
+  height: 130px;
+  background-color: #606065;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+
+/* .logo-container {
+
+} */
+
+.logo {
+  width: 80px;
+  height: 80px;
+  padding-top: 0px;
+  margin: 0;
+}
+
+.link-container {
+  margin-left: 0.4rem;
+  margin-right: 4rem;
+  padding: 0.8rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #ececec;
+}
+
+.link:hover {
+  color: aqua;
+}
+
+/* 
+    navContainer : {
+
+    },
+    flexItem : {
+        // className="dtc v-mid pa3"
+    },
+    nav : {
+      //  className='dt w-100 mw8 h2 center'
+      display: 'flex',
+      justifyContent : 'space-between',
+      padding : '1.2rem',
+    },
+    logo : {
+        width: '80px',
+        height: '80px',
+        paddingTop: '0px',
+        margin: '0',
+    },
+    linkContainer : {
+        //className="f6 fw4 hover-blue no-underline white-70 dn dib-ns pv2 ph3"
+        marginLeft: '0.4rem',
+        marginRight: '4rem',
+      
+        padding: '0.8rem',
+    },
+
+    link : {
+        textDecoration : 'none',
+        color : '#ececec',
+    },
+    linkHover : {
+        color: 'aqua',
+      }
+} */
